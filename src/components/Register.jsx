@@ -1,7 +1,4 @@
 import React, { useState } from 'react'
-import axios from 'axios'
-
-
 
 const Register = () => {
     const [user, setUser] = useState("")
@@ -15,7 +12,6 @@ const Register = () => {
         setPass('')
         setName('')
     }
-
 
   return (
     <div className='auth-container'>

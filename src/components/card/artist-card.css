@@ -1,0 +1,13 @@
+.artist-card-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    width: 300px;
+    height: 350px;
+    transition: 0.5s ease-in-out;
+}
+
+.artist-card-container:hover {
+    transform: scale(1.2);
+}

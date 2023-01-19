@@ -7,7 +7,7 @@ const SearchBar = () => {
 
   const handleSearchChange = (event) => {
     setSearchValue(event.target.value);
-    searchArtist(event.target.value)
+    searchArtist(event.target.value);
   }
 
   return (

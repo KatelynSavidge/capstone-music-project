@@ -1,12 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import axios from 'axios'
+import UserContext from '../context/UserContext';
+import useUser from '../hooks/useUser';
 
 const Login = () => {
     const [user, setUser] = useState('')
     const [pass, setPass] = useState('')
+    // const {userContext, setUserContext} = useContext(UserContext);
+    const [userContext, setUserContext] = useUser()
 
     const handleSubmit = (e) => {
-
         e.preventDefault()
+
+        let body = {
+            username: user,
+            password: pass
+        }
+
+        axios.post("http://localhost:4000/api/login/", body)
+        .then(res => {
+            const data = res.data;
+            if (data === "Successfully logged in user " + user) {
+                setUserContext(user);
+                console.log("set user")
+            }
+            alert(data);
+        });
 
         setPass('')
         setUser('')

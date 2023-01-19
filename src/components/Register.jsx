@@ -1,16 +1,28 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 const Register = () => {
+
     const [user, setUser] = useState("")
     const [pass, setPass] = useState("")
-    const [name, setName] = useState("")
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-
-        setUser('')
-        setPass('')
-        setName('')
+        try {
+            const body = {
+                username: user,
+                password: pass
+            }
+            axios.post("http://localhost:4000/api/register/", body)
+            .then((res) => {
+                const response = res.data;
+                alert(response);
+            })
+            setUser('');
+            setPass('');
+          } catch (err) {
+            alert('Error creating user');
+          }
     }
 
   return (
@@ -19,13 +31,6 @@ const Register = () => {
             
         <h1 className='h1-text'>Register</h1>
         <br />
-
-        <label htmlFor="">Full Name</label>
-        <input 
-            value={name} 
-            onChange={(e) => setName(e.target.value)}
-            name='name' 
-            id='name'/>
 
         <label htmlFor="user">Username</label>
         <input 

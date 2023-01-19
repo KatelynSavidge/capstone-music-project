@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import ArtistCard from '../components/card/ArtistCard';
 import useArtists from '../hooks/useArtists';
 import _ from 'lodash';
@@ -11,8 +11,8 @@ const HomePage = () => {
 
   return (
     <div>
-        <h1 className='home-text1'> MusicNow</h1>
-        <h2 className='home-text2'>Find and track your favorite artists</h2>
+        <h1 className='home-text1'>MusicNow</h1>
+        <h2 className='home-text2'>Find and follow your favorite artists</h2>
 
         <div className='search-bar'>
           <SearchBar/>
@@ -27,7 +27,7 @@ const HomePage = () => {
         </div>
 
         <div className='flex-container-column'>
-          <h2>Suggested Artists</h2>
+          <h2 className='suggested-text'>Suggested Artists</h2>
           
           <div className='flex-container-row'>
             {artistsData.map((artist, index) => (

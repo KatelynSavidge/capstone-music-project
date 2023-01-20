@@ -18,6 +18,7 @@ const Register = () => {
                 const response = res.data;
                 alert(response);
             })
+            .catch(res => console.log(res))
             setUser('');
             setPass('');
           } catch (err) {

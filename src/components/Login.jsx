@@ -1,13 +1,11 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios'
 import UserContext from '../context/UserContext';
-import useUser from '../hooks/useUser';
 
 const Login = () => {
     const [user, setUser] = useState('')
     const [pass, setPass] = useState('')
-    // const {userContext, setUserContext} = useContext(UserContext);
-    const [userContext, setUserContext] = useUser()
+    const { userContext, setUserContext } = useContext(UserContext);
 
     const handleSubmit = (e) => {
         e.preventDefault()

@@ -20,17 +20,12 @@ function App() {
             <SearchContext.Provider value={{searchData:searchData, setSearchData:setSearchData}}>
               <HomePage/>
             </SearchContext.Provider>
-          
         }/>
         <Route path='/profile' element={
-        
             <UserProfile/>
-         
         }/>
         <Route path='/login' element={
-           
-              <LoginPage/>
-         
+            <LoginPage/>
         }/>
       </Routes>
     </UserProvider>

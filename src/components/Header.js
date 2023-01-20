@@ -6,9 +6,9 @@ import logo from '../assets/logo.png';
 const Header = () => {
   return (
     <div>
-      <a href="/">
+      <Link to="/">
         <img className='logo' src={logo} align="left"/>
-      </a>
+      </Link>
 
       <div className='header-main'>
         <Link className='profile-btn' to='/profile'>Profile</Link>

@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import UserContext from '../context/UserContext';
-import useUser from '../hooks/useUser';
 
 function UserProvider({ children }) {
-    const [userContext, setUserContext] = useUser();
+    const [userContext, setUserContext] = useState()
   
     return (
       <UserContext.Provider value={{ userContext, setUserContext }}>
